@@ -6,20 +6,42 @@
     <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent -->
     <parent>
         <groupId>org.springframework.boot</groupId>
+        <version/>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.6.RELEASE</version>
     </parent>
 
     <groupId>com.lianekai.platfrom</groupId>
     <artifactId>lek-framework</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${revision}</version>
     <packaging>pom</packaging>
 
     <modules>
         <module>lek-framework-excel</module>
         <module>lek-framework-util</module>
         <module>lek-framework-elasticsearch</module>
+        <module>lek-framework-core</module>
+        <module>lek-framework-main</module>
     </modules>
+
+    <!--管理一些统一版本的属性变量-->
+    <properties>
+        <revision>1.0-SNAPSHOT</revision>
+        <mysql.version>8.0.11</mysql.version>
+
+    </properties>
+
+    <!--dependencyManagement元素提供了一种管理依赖版本号的方式。在dependencyManagement元素中声明所依赖的jar包的版本号等信息，
+    那么所有子项目再次引入此依赖jar包时则无需显式的列出版本号。Maven会沿着父子层级向上寻找拥有dependencyManagement 元素的项目，然后使用它指定的版本号。-->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-parent</artifactId>
+                <version>2.1.6.RELEASE</version>
+            </dependency>
+        </dependencies>
+
+    </dependencyManagement>
 
 
     <dependencies>
