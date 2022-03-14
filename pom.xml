@@ -6,8 +6,8 @@
     <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent -->
     <parent>
         <groupId>org.springframework.boot</groupId>
-        <version/>
         <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.6.RELEASE</version>
     </parent>
 
     <groupId>com.lianekai.platfrom</groupId>
@@ -27,7 +27,7 @@
     <properties>
         <revision>1.0-SNAPSHOT</revision>
         <mysql.version>8.0.11</mysql.version>
-
+        <lek.excel.version>${revision}</lek.excel.version>
     </properties>
 
     <!--dependencyManagement元素提供了一种管理依赖版本号的方式。在dependencyManagement元素中声明所依赖的jar包的版本号等信息，
@@ -40,7 +40,6 @@
                 <version>2.1.6.RELEASE</version>
             </dependency>
         </dependencies>
-
     </dependencyManagement>
 
 
